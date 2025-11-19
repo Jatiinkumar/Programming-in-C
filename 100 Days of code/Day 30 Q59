@@ -1,3 +1,7 @@
+/*
+Question: Count even and odd numbers in an ar
+*/
+
 #include <stdio.h>
 
 int main() {
