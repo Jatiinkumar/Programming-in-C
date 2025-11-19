@@ -1,0 +1,39 @@
+/*
+Question: Find the digit that occurs the most times in an integer number.
+*/
+
+#include <stdio.h>
+
+int main() {
+    long long num;
+    int digitCount[10] = {0};
+    int digit, maxDigit = 0, maxCount = 0;
+
+    printf("Enter an integer number: ");
+    scanf("%lld", &num);
+
+    // If number is negative, convert to positive
+    if (num < 0) {
+        num = -num;
+    }
+
+    // Count occurrences of each digit
+    while (num > 0) {
+        digit = num % 10;
+        digitCount[digit]++;
+        num /= 10;
+    }
+
+    // Find the digit with maximum occurrences
+    for (int i = 0; i < 10; i++) {
+        if (digitCount[i] > maxCount) {
+            maxCount = digitCount[i];
+            maxDigit = i;
+        }
+    }
+
+    printf("Digit that occurs the most: %d\n", maxDigit);
+    printf("It occurs %d times.\n", maxCount);
+
+    return 0;
+}
