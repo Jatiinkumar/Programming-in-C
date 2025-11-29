@@ -1,0 +1,14 @@
+/*Create an enumeration for days (SUNDAY to SATURDAY) and print each day with its integer value.*/
+#include <stdio.h>
+
+int main()
+{
+    enum days {SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY};
+
+    for(int d = SUNDAY; d <= SATURDAY; d++)
+    {
+        printf("%d ", d);
+    }
+
+    return 0;
+}
