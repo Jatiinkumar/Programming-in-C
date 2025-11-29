@@ -1,0 +1,22 @@
+/*(Enum)
+Use malloc() to allocate structure memory dynamically and print details.*/
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Person {
+    char name[50];
+    int age;
+    float salary;
+};
+
+int main()
+{
+    struct Person *p = (struct Person*)malloc(sizeof(struct Person));
+
+    scanf("%s %d %f", p->name, &p->age, &p->salary);
+
+    printf("%s %d %.2f", p->name, p->age, p->salary);
+
+    free(p);
+    return 0;
+}
