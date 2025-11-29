@@ -1,0 +1,21 @@
+/*Define an enum for traffic lights (RED, YELLOW, GREEN) and print 'Stop', 'Wait', or 'Go' based on its value.*/
+#include <stdio.h>
+
+int main()
+{
+    enum light {RED, YELLOW, GREEN};
+
+    enum light signal;
+    scanf("%d", &signal);   // user enters 0, 1, or 2
+
+    if(signal == RED)
+        printf("Stop");
+    else if(signal == YELLOW)
+        printf("Wait");
+    else if(signal == GREEN)
+        printf("Go");
+    else
+        printf("Invalid");
+
+    return 0;
+}
