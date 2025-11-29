@@ -1,0 +1,39 @@
+/*Create an enum for months and print how many days each month has.*/
+#include <stdio.h>
+
+int main()
+{
+    enum months {JAN=1, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC};
+
+    int m;
+    scanf("%d", &m);  // enter month number 1–12
+
+    switch(m)
+    {
+        case JAN:
+        case MAR:
+        case MAY:
+        case JUL:
+        case AUG:
+        case OCT:
+        case NOV:
+            printf("31 days");
+            break;
+
+        case APR:
+        case JUN:
+        case SEP:
+        case DEC:
+            printf("30 days");
+            break;
+
+        case FEB:
+            printf("28 or 29 days");
+            break;
+
+        default:
+            printf("Invalid month");
+    }
+
+    return 0;
+}
