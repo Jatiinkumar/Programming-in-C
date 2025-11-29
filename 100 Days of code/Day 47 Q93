@@ -1,0 +1,36 @@
+/* Check if two strings are anagrams of each other */
+
+#include <stdio.h>
+int main() {
+    char a[200], b[200];
+    int freq1[256] = {0}, freq2[256] = {0};
+    int i = 0, flag = 1;
+
+    fgets(a, 200, stdin);
+    fgets(b, 200, stdin);
+
+    while(a[i] != '\0') {
+        if(a[i] != '\n')
+            freq1[(unsigned char)a[i]]++;
+        i++;
+    }
+
+    i = 0;
+    while(b[i] != '\0') {
+        if(b[i] != '\n')
+            freq2[(unsigned char)b[i]]++;
+        i++;
+    }
+
+    for(i = 0; i < 256; i++) {
+        if(freq1[i] != freq2[i]) {
+            flag = 0;
+            break;
+        }
+    }
+
+    if(flag) printf("Anagram");
+    else printf("Not Anagram");
+
+    return 0;
+}
