@@ -1,23 +1,29 @@
 /*(Strings)
-Print all sub-strings of a string.
+Change the date format from dd/04/yyyy to dd-Apr-yyyy.
 */
 
 #include <stdio.h>
 
 int main() {
-    char s[100];
-    int i, j, k;
+    char date[20], month[4];
+    int dd, mm, yy;
 
-    scanf("%s", s);
+    scanf("%d/%d/%d", &dd, &mm, &yy);
 
-    for (i = 0; s[i] != '\0'; i++) {
-        for (j = i; s[j] != '\0'; j++) {
-            for (k = i; k <= j; k++) {
-                printf("%c", s[k]);
-            }
-            printf("\n");
-        }
-    }
+    if (mm == 1) sprintf(month, "Jan");
+    else if (mm == 2) sprintf(month, "Feb");
+    else if (mm == 3) sprintf(month, "Mar");
+    else if (mm == 4) sprintf(month, "Apr");
+    else if (mm == 5) sprintf(month, "May");
+    else if (mm == 6) sprintf(month, "Jun");
+    else if (mm == 7) sprintf(month, "Jul");
+    else if (mm == 8) sprintf(month, "Aug");
+    else if (mm == 9) sprintf(month, "Sep");
+    else if (mm == 10) sprintf(month, "Oct");
+    else if (mm == 11) sprintf(month, "Nov");
+    else if (mm == 12) sprintf(month, "Dec");
+
+    printf("%02d-%s-%d", dd, month, yy);
 
     return 0;
 }
