@@ -1,0 +1,25 @@
+/*(Enum)
+Take two structs as input and check if they are identical.*/
+#include <stdio.h>
+#include <string.h>
+
+struct Data {
+    char name[50];
+    int id;
+    float value;
+};
+
+int main()
+{
+    struct Data a, b;
+
+    scanf("%s %d %f", a.name, &a.id, &a.value);
+    scanf("%s %d %f", b.name, &b.id, &b.value);
+
+    if (strcmp(a.name, b.name) == 0 && a.id == b.id && a.value == b.value)
+        printf("Identical");
+    else
+        printf("Not Identical");
+
+    return 0;
+}
