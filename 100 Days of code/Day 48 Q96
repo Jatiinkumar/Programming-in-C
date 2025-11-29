@@ -1,0 +1,25 @@
+/* Reverse each word in a sentence without changing the word order */
+
+#include <stdio.h>
+int main() {
+    char s[500];
+    int i = 0, start = 0, end;
+
+    fgets(s, 500, stdin);
+
+    while(s[i] != '\0') {
+        if(s[i] == ' ' || s[i] == '\n') {
+            end = i - 1;
+            while(end >= start) {
+                printf("%c", s[end]);
+                end--;
+            }
+            if(s[i] == ' ')
+                printf(" ");
+            start = i + 1;
+        }
+        i++;
+    }
+
+    return 0;
+}
