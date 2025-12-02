@@ -1,0 +1,22 @@
+/*(Enum)
+Use pointer to struct to modify and display data using -> operator.*/
+#include <stdio.h>
+
+struct Item {
+    char name[50];
+    int price;
+};
+
+int main()
+{
+    struct Item it, *p;
+    p = &it;
+
+    scanf("%s %d", p->name, &p->price);
+
+    p->price = p->price + 10;
+
+    printf("%s %d", p->name, p->price);
+
+    return 0;
+}
